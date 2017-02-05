@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { increment, doubleAsync } from '../modules/counter'
+import { increment, doubleAsync } from '../modules/counter' // Actions
 
 /*  This is a container component. Notice it does not contain any JSX,
     nor does it import React. This component is **only** responsible for
@@ -7,6 +7,7 @@ import { increment, doubleAsync } from '../modules/counter'
     component - in this case, the counter:   */
 
 import Counter from '../components/Counter'
+// Import the presentional component to later be connected to redux container.
 
 /*  Object of action creators (can also be function that returns object).
     Keys will be passed as props to presentational components. Here we are

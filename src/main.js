@@ -3,6 +3,13 @@ import ReactDOM from 'react-dom'
 import createStore from './store/createStore'
 import AppContainer from './containers/AppContainer'
 
+/*
+  Goal: Render our main react component!
+  1. Initals store with initalState
+  2. Render root react node with imorted routes config
+  3. If dev inviorment setup HMR (live reload)
+*/
+
 // ========================================================
 // Store Instantiation
 // ========================================================
@@ -16,7 +23,7 @@ const MOUNT_NODE = document.getElementById('root')
 
 let render = () => {
   const routes = require('./routes/index').default(store)
-
+  console.log(routes)
   ReactDOM.render(
     <AppContainer store={store} routes={routes} />,
     MOUNT_NODE
