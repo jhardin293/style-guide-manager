@@ -36,4 +36,5 @@ const mapStateToProps = (state) => ({
     Selectors are composable. They can be used as input to other selectors.
     https://github.com/reactjs/reselect    */
 
+/* connect() Connects a React component to a Redux store*/
 export default connect(mapStateToProps, mapDispatchToProps)(Counter)

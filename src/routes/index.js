@@ -1,7 +1,8 @@
 // We only need to import the modules necessary for initial render
 import CoreLayout from '../layouts/CoreLayout'
 import Home from './Home'
-import CounterRoute from './Counter'
+import Counter from './Counter'
+import Todos from './Todos'
 /*
   Goal:  Export the initilized main app wrapper, first loaded component and childRouts
   1. Define core layout
@@ -17,7 +18,8 @@ export const createRoutes = (store) => ({
   component   : CoreLayout, // App main layout component
   indexRoute  : Home, // First loaded component
   childRoutes : [
-    CounterRoute(store)
+    Counter(store),
+    Todos(store)
   ]
 })
 

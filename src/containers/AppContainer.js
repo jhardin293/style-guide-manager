@@ -20,8 +20,14 @@ class AppContainer extends Component {
   render () {
     const { routes, store } = this.props
     return (
-      // A provider gives all componets access to the store
-      // The router's settings are configrued by its props
+      /* 
+        - A provider gives all componets access to the store
+        - The router's settings are configrued by its props
+        -  How does the Router get access to the store?
+           - The Router gets access to the store by being a chilld
+           of the provider. So internall routes can make a call to the store by using connect() 
+        - children={routes} evaluate to <Route path="/urlPath" component={componentToRender} />...
+      */
       <Provider store={store}>
         <div style={{ height: '100%' }}>
           <Router history={browserHistory} children={routes} />
