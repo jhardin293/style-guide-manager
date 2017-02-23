@@ -1,16 +1,7 @@
 const todo = (state, action) => {
   switch (action.type) {
-    case 'ADD_TODO':
-      return {
-        id: action.id,
-        text: action.text,
-        completed: false
-      }
     case 'TOGGLE_TODO':
-      if (state.id !== action.id) {
-        return state
-      }
-
+      console.log(state, 'state', action, 'action')
       return {
         ...state,
         completed: !state.completed
@@ -20,16 +11,13 @@ const todo = (state, action) => {
   }
 }
 
-const todos = (state = [], action) => {
+const todos = (state = {}, action) => {
   switch (action.type) {
-    case 'ADD_TODO':
-      return [
-        ...state,
-        todo(undefined, action)
-      ]
+    case 'FETCH_TODOS': 
+      return action.payload
     case 'TOGGLE_TODO':
-      return state.map(t =>
-        todo(t, action)
+      return Object.keys(state).map(t =>
+        todo(state, action)
       )
     default:
       return state
