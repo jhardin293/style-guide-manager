@@ -24,7 +24,11 @@ export const setVisibilityFilter = (filter) => ({
   filter
 })
 
-export const toggleTodo = (id) => ({
-  type: 'TOGGLE_TODO',
-  id
-})
+export const toggleTodo = (todo, id) => {
+  todo.completed = !todo.completed
+  return dispatch => database.ref('todos/' + id).update(todo)
+  // return {
+  //   type: 'TOGGLE_TODO',
+  //   id
+  // }
+}

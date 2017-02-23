@@ -14,7 +14,7 @@ class TodoList extends Component  {
           <Todo
             key={todo}
             {...todos[todo]}
-            onClick={() => onTodoClick(todo)}
+            onClick={() => onTodoClick(todos[todo], todo)}
           />
         )}
       </ul>
