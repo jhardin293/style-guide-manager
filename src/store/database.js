@@ -1,11 +1,11 @@
 import firebase from 'firebase'
 
 const config = {
-  apiKey: "AIzaSyCMgPhbfc01LwngSaRPfL69bVPIOxh8Jkc",
-  authDomain: "redux-todo-4ca5e.firebaseapp.com",
-  databaseURL: "https://redux-todo-4ca5e.firebaseio.com",
-  storageBucket: "redux-todo-4ca5e.appspot.com",
-  messagingSenderId: "99712660951"
+  apiKey: "AIzaSyDEKtI7iPX3ZGnvsBa8eWSaUF0_IONDR18",
+  authDomain: "style-guide-manager.firebaseapp.com",
+  databaseURL: "https://style-guide-manager.firebaseio.com",
+  storageBucket: "style-guide-manager.appspot.com",
+  messagingSenderId: "31752218909"
 }
 
 firebase.initializeApp(config)

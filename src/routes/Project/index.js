@@ -1,12 +1,12 @@
-import HomeView from './components/HomeView'
+import Project from './containers/Project'
 import { injectReducer } from '../../store/reducers'
 import reducer from './modules/reducers'
 
 export default (store) => {
-  injectReducer(store, { key: 'projects', reducer })
+  injectReducer(store, { key: 'project', reducer })
   const route = {
-    component : HomeView
-
+    path: 'project/:name',
+    component : Project,
   }
   return route
 }

@@ -1,11 +1,10 @@
-
-const todos = (state = {}, action) => {
+const projects = (state = {}, action) => {
   switch (action.type) {
-    case 'FETCH_TODOS': 
+    case 'FETCH_PROJECT':
       return action.payload
     default:
       return state
   }
 }
 
-export default todos
+export default projects

@@ -1,8 +1,7 @@
 // We only need to import the modules necessary for initial render
 import CoreLayout from '../layouts/CoreLayout'
 import Home from './Home'
-import Counter from './Counter'
-import Todos from './Todos'
+import Project from './Project'
 /*
   Goal:  Export the initilized main app wrapper, first loaded component and childRouts
   1. Define core layout
@@ -16,29 +15,10 @@ import Todos from './Todos'
 export const createRoutes = (store) => ({
   path        : '/',
   component   : CoreLayout, // App main layout component
-  indexRoute  : Home, // First loaded component
+  indexRoute  : Home(store), // First loaded component
   childRoutes : [
-    Counter(store),
-    Todos(store)
+    Project(store)
   ]
 })
-
-/*  Note: childRoutes can be chunked or otherwise loaded programmatically
-    using getChildRoutes with the following signature:
-    //Is getChild created by react-router?
-    getChildRoutes (location, cb) {
-      require.ensure([], (require) => {
-        cb(null, [
-          // Remove imports!
-          require('./Counter').default(store)
-        ])
-      })
-    }
-
-    However, this is not necessary for code-splitting! It simply provides
-    an API for async route definitions. Your code splitting should occur
-    inside the route `getComponent` function, since it is only invoked
-    when the route exists and matches.
-*/
 
 export default createRoutes
