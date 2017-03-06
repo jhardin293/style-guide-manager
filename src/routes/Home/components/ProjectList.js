@@ -8,11 +8,12 @@ class ProjectList extends Component {
 
   render() {
     // const { projects, onProjectClick } = this.props
+    console.log(this.props, 'props');
     const projects = this.props.projects.projects.projects
     return (
       <ul>
         {Object.keys(projects).map(project =>
-          <Project 
+          <Project
             key={project}
             {...projects[project]}
           />

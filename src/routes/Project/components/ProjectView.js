@@ -6,12 +6,13 @@ import { connect } from 'react-redux'
 class ProjectView extends Component {
   componentWillMount () {
     this.props.fetchProject(this.props.params.name)
-    // console.log(this.props.project.project.project.sections, 'props')
+    console.log(this.props.project.project.project.sections, 'props')
     // console.log(test)
   }
-  
+
   render() {
     const projectName = this.props.params.name
+    const sections = this.props.project.project.project.sections || {}
     let input
     return (
       <div>
@@ -29,6 +30,13 @@ class ProjectView extends Component {
           }}/>
           <button type="submit">Add Description</button>
         </form>
+        <ul>
+          {Object.keys(sections).map(section =>
+            <li key={section}>
+              {sections[section].description}
+            </li>
+          )}
+        </ul>
       </div>
     )
   }

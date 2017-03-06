@@ -4,8 +4,9 @@ import ProjectList from '../components/ProjectList'
 
 
 const mapStateToProps = (state) => {
+  console.log(state, 'state')
   const  projects = {
-    projects: state 
+    projects: state
   }
   return projects
 }
